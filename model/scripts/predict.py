@@ -66,7 +66,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.quick == "True":
-        model = load_model("backup/model.h5")
+        model = load_model(f"{constants.HOME_DIR}/backup/model.h5")
         for image in glob.glob(os.path.join(f'{constants.HOME_DIR}/images_for_predict_script', '*')):
             img = get_image(image, "")
             prediction = constants.PREDICTION_LABELS[list((model.predict(img).astype(int))[0]).index(1)]
@@ -83,7 +83,7 @@ if __name__ == '__main__':
         print(prediction)  
 
     else:
-        model = load_model("backup/model.h5")
+        model = load_model(f"{constants.HOME_DIR}/backup/model.h5")
         img = get_image(args.image, args.type)
         prediction = constants.PREDICTION_LABELS[list((model.predict(img).astype(int))[0]).index(1)]
         print(prediction)    
