@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><img style="height: 40px" src="../../../assets/logo_name.png" alt=""></ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-title>My predictions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-col>
+      <!-- <ion-col col-6 *ngFor="let photo of photoService.photos">
+          <img [src]="photo.data" />
+      </ion-col> -->
+      <ion-col *ngFor="let image of this.listOfImages">
+        <div class="container" (click)="showDetails()">
+          <!-- <img src="../../../assets/test_images/1.png" /> -->
+          <img src='{{ip}}/{{image.image_path}}' />
+          <div class="container-tag">
+            <h1>Name: {{image.name}}</h1>
+            <p>Prediction: {{image.prediction}}</p>
+            <p>Status: {{image.status}}</p>
+            <p>Date Uploaded: {{image.date_submitted}}</p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-col>
+
+  </ion-grid>
+  
+  <!-- <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="photoService.takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+  </ion-fab> -->
+</ion-content>

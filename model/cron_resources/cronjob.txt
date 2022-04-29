@@ -1,0 +1,13 @@
+How to setup cronjobs on Linux: https://phoenixnap.com/kb/set-up-cron-job-linux
+How to setup cronjobs on MacOSX: https://betterprogramming.pub/https-medium-com-ratik96-scheduling-jobs-with-crontab-on-macos-add5a8b26c30
+How to setup cronjobs on MaxOSX: https://dccxi.com/posts/crontab-not-working-catalina/
+Other links: https://stackoverflow.com/questions/20582224/shell-script-not-running-via-crontab-but-runs-fine-manually
+https://stackoverflow.com/questions/59033891/append-text-to-a-file-every-minute-using-crontab-in-mac-os-x-is-not-working
+https://askubuntu.com/questions/350861/how-to-set-a-cron-job-to-run-a-shell-script
+
+
+*/10 * * * * /bin/sh /Users/ernestang98/Desktop/CZ4171/model/retrain.sh
+
+crontab -e
+crontab -l
+crontab -r

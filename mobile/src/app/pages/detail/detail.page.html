@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.modalCtrl.dismiss()">
+        <ion-back-button defaultHref="dashboard" text="Back"></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleEditorMode()">
+        <div *ngIf="editorMode; else visualMode">
+          <ion-icon class="animated fadeIn" slot="icon-only" name="close-outline"></ion-icon>
+        </div>
+        <ng-template #visualMode>
+          <ion-icon class="animated fadeIn" slot="icon-only" name="create-outline"></ion-icon>
+        </ng-template>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+  <ion-card-content *ngIf="client">
+    <div class="animated fadeIn">
+      <ion-avatar>
+        <ion-img [src]="client.avatar"></ion-img>
+      </ion-avatar>
+    </div>
+    <div *ngIf="!editorMode" class="ion-text-center">
+      <h1 class="nome">{{ client.first_name }} {{ client.last_name }}</h1>
+      <h2>{{ client.email }}</h2>
+    </div>
+    <div *ngIf="editorMode" class="ion-text-center">
+      <ion-input class="input" type="text" placeholder="Add client's name" [(ngModel)]="name"></ion-input>
+      <ion-input class="input" type="text" placeholder="Add client's email" [(ngModel)]="email"></ion-input>
+      <ion-button (click)="updateClientDetails()" expand="block" shape="round">
+        Save
+      </ion-button>
+    </div>
+  </ion-card-content>
+
+</ion-content>

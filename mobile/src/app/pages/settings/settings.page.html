@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><img style="height: 40px" src="../../../assets/logo_name.png" alt=""></ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label>Server Endpoint:</ion-label>
+  <ion-item>
+    <ion-input [(ngModel)]="this.ip" placeholder="Insert endpoint here" value="{{this.ip}}" max="20"></ion-input>
+    <ion-button color="light" (click)="ping()">Ping!</ion-button>
+    <ion-button (click)="save()">Save!</ion-button>
+  </ion-item>
+  <ion-label>User:</ion-label>
+  <ion-item>
+    <ion-input [(ngModel)]="this.name" placeholder="Insert name here" value="{{this.name}}" max="20"></ion-input>
+    <ion-button (click)="saveName()">Save!</ion-button>
+  </ion-item>
+</ion-content>

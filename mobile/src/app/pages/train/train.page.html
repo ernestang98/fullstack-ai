@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><img style="height: 40px" src="../../../assets/logo_name.png" alt=""></ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-title>Upload to train</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="upload-container">
+    <div class="animated fadeInDown">
+      <div *ngIf="isDesktop; else mobileupload">
+        <h2 class="file-upload-header">File Upload & Image Preview</h2>
+
+        <div class="labellll">
+          <ion-item class="label">
+            <ion-label>Food</ion-label>
+            <ion-select placeholder="Select One" (ionChange)="food = $event.target.value">
+        <!--       <ion-select-option [value]="food" *ngFor="let food of food_list;" (click)="optionsFn(food);">{{food}}</ion-select-option> -->
+              <ion-select-option [value]="food" *ngFor="let food of food_list;">{{food}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <form id="file-upload-form" class="uploader" action = "http://127.0.0.1:5000" method = "post" enctype="multipart/form-data">
+          <input id="file-upload" type="file" name="fileUpload" accept="image/*" (change)="onFileChange($event)" #file />
+          <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden" />
+            <div id="start">
+              <i *ngIf="!imageSrc" class="fa fa-download image-icon" aria-hidden="true"></i>
+              <img [src]="imageSrc" *ngIf="imageSrc" style="height: 400px; width: 400px" />
+              <div class="image-subtitle">
+                <ion-button id="file-upload-btn" (click)="file.click()">Select a file</ion-button>
+              </div>
+            </div>
+          </label>
+        </form>
+      </div>
+      <ng-template #mobileupload>
+        <h2 class="file-upload-header-mobile">File Upload & Image Preview</h2>
+        <div class="labellll">
+          <ion-item class="label">
+            <ion-label>Food</ion-label>
+            <ion-select placeholder="Select One" (ionChange)="food = $event.target.value">
+        <!--       <ion-select-option [value]="food" *ngFor="let food of food_list;" (click)="optionsFn(food);">{{food}}</ion-select-option> -->
+              <ion-select-option [value]="food" *ngFor="let food of food_list;">{{food}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        <ion-img (click)="selectImage()" src="../../../assets/upload.png" *ngIf="!croppedImagePath"></ion-img>
+        <ion-img (click)="selectImage()" [src]="croppedImagePath" *ngIf="croppedImagePath"></ion-img>
+      </ng-template>
+    </div>
+    <div class="animated fadeInDown" *ngIf="isDesktop; else mobilebutton">
+      <ion-button (click)="upload()"  class="upload" expand="block">Upload</ion-button>
+    </div>
+    <ng-template #mobilebutton>
+      <ion-button (click)="mobileUpload()"  class="upload" expand="block">Upload</ion-button>
+    </ng-template>
+  </div>
+</ion-content>
