@@ -27,17 +27,21 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
    flask run
 	```
 	
-	Parameters to set in `.env` file
+	Parameters to set in `scripts/.env` file
 	
 	- FLASK_ENV (DEVELOPMENT/PRODUCTION)
 
 	- MODEL_ENDPOINT (docker server endpoint)
 
-	Parameters to set in `constants.py` file
+	Parameters to set in `scripts/constants.py` file
 	
 	- DATA_DIR
 
 	- HOME_DIR
+
+	Parameters to set in the `retrain.sh`
+	
+	- directory
 
 	Note:
 	
