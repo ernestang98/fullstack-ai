@@ -92,7 +92,7 @@ if __name__ == '__main__':
         """
 
         logger.info('Testing backup model...')  
-        model = load_model('../backup/model.h5')
+        model = load_model(f"{constants.HOME_DIR}/backup/model.h5")
         test_datagen = ImageDataGenerator(rescale=1./255)
         test_generator = test_datagen.flow_from_directory(constants.DATA_DIR + '/test', target_size=(64,64), batch_size=32)
         x_test, y_test = test_generator.next()
