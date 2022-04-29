@@ -84,9 +84,9 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
 
 	- default_name
 
-### Deployment to Heroku
+### Deployment to Heroku/Firebase
 
-1. How to push subdirectories, ref [here](https://stackoverflow.com/questions/26241683/heroku-deploy-a-sub-directory)
+1. How to push subdirectories ref [here](https://stackoverflow.com/questions/26241683/heroku-deploy-a-sub-directory)
 
 	`git subtree push --prefix server heroku master`
 	
@@ -97,7 +97,7 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
    firebase deploy
 	```
 
-2. Deployed Links
+3. Deployed Links
 
 	- API/Producer: [http://cz4171-prod-api.herokuapp.com/](http://cz4171-prod-api.herokuapp.com/)
 
