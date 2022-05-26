@@ -53,8 +53,8 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
 
 	```
 	cd api-producer
-   yarn
-   yarn start
+        yarn
+        yarn start
 	```
 	
 	Parameters to set in `env/.env.production` and `env/.env.development` file
@@ -77,6 +77,10 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
 
 	- MONGODB=mongodb://localhost:27017/
 	
+        Parameters to set in `src/app.service.ts`
+
+        - MODEL_ENDPOINT = "http://127.0.0.1:5000"
+
 4. Run Mobile Application
 
 	```
