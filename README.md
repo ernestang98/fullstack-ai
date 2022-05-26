@@ -115,7 +115,7 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
 
 	- Worker: Cannot be deployed since flask connector cannot be deployed
 
-	- Mobile Application (Web Version): [https://cz4171deployment.web.app/dashboard](https://cz4171deployment.web.app/dashboard)
+	- Mobile Application (Web Version): [https://cz4171deployment.web.app/](https://cz4171deployment.web.app/)
 
 ### Errors Encountered
 
