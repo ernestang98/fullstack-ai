@@ -77,9 +77,9 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
 
 	- MONGODB=mongodb://localhost:27017/
 	
-        Parameters to set in `src/app.service.ts`
+    Parameters to set in `src/app.service.ts`
 
-        - MODEL_ENDPOINT = "http://127.0.0.1:5000"
+    - MODEL_ENDPOINT = "http://127.0.0.1:5000"
 
 4. Run Mobile Application
 
