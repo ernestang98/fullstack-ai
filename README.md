@@ -21,10 +21,10 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
 	```
 	cd model
 	docker run -p 8501:8501 --name cz4171 -v "$(pwd)/backup/saved_model:/models/cz4171/1" -e MODEL_NAME=cz4171 tensorflow/serving &
-   virtualenv venv
-   source venv/bin/activate
-   pip3 install -r requirements.txt
-   flask run
+	virtualenv venv
+	source venv/bin/activate
+	pip3 install -r requirements.txt
+	flask run
 	```
 	
 	Parameters to set in `scripts/.env` file
@@ -53,8 +53,8 @@ Mobile Application has the ability to send requests to API Server. RabbitMQ conv
 
 	```
 	cd api-producer
-        yarn
-        yarn start
+	yarn
+	yarn start
 	```
 	
 	Parameters to set in `env/.env.production` and `env/.env.development` file
